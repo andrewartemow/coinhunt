@@ -1,0 +1,45 @@
+.coinSlider {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+  border-radius: 15px;
+}
+
+.coinSliderItem {
+  display: flex;
+  background-color: hsla(230, 16%, 22%, 0.5);
+  padding: 20px 0;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coinSliderItem h4 {
+  margin-bottom: 10px;
+}
+
+.coinSliderItem p span {
+  background-color: hsl(142, 43%, 54%);
+  padding: 7px;
+  border-radius: 20px;
+  margin-right: 5px;
+}
+
+.coinSliderItem p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+.coinImageWrapper {
+  height: 64px;
+  width: 64px;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}

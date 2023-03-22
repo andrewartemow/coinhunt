@@ -6,7 +6,7 @@ const MainPage = () => {
   return (
     <div className={styles.mainPage}>
       <BannerSection />
-      {/* <CoinSliderSection /> */}
+      <CoinSliderSection />
     </div>
   );
 };
