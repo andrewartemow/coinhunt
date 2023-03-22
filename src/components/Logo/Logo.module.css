@@ -1,0 +1,10 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h3 {
+  margin-right: 5px;
+  color: hsl(222, 100%, 61%);
+  font-weight: 700;
+}

@@ -1,3 +1,30 @@
 .App {
+  min-height: 100vh;
+  height: 100%;
   text-align: center;
+  width: 100%;
+  background-color: hsl(228, 9%, 10%);
+  color: #fff;
+}
+
+h1 {
+  font-size: 45px;
+  line-height: 50px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 15px;
+  line-height: 15px;
 }

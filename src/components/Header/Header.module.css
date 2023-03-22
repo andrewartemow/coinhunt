@@ -1,0 +1,18 @@
+.header {
+  background-color: hsl(240, 5%, 8%);
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerContent p {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+}

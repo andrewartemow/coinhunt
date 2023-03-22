@@ -1,0 +1,39 @@
+.bannerSection {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoText {
+  max-width: 800px;
+  margin-right: 20px;
+}
+
+.infoText h1,
+.infoText h2 {
+  text-align: left;
+}
+
+.infoText h1 {
+  margin-bottom: 10px;
+}
+
+.infoText h2 {
+  color: hsl(227, 13%, 73%);
+  font-weight: 500;
+}
+
+.infoImg {
+  height: 200px;
+  min-width: 200px;
+  background-image: url('../../images/cryptocurrencies-growing-up.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
