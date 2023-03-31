@@ -11,12 +11,3 @@
   justify-content: space-between;
   align-items: center;
 }
-
-.currency {
-  display: flex;
-  align-items: center;
-}
-
-.headerContent button {
-  margin-left: 10px;
-}

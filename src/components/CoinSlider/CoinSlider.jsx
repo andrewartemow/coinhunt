@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import Slider from 'react-slick';
 import CoinsContext from '../../contexts/CoinsContext';
 
@@ -9,12 +10,12 @@ const CoinSlider = () => {
   const context = useContext(CoinsContext);
   const { coins, currencySymbol } = context;
   const navigate = useNavigate();
+
   const handleCoinRowClick = (coin) => {
     navigate(`/${coin.uuid}`);
   };
 
   const settings = {
-    // dots: true,
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,

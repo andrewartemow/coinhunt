@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import SideBar from '../../components/SideBar/SideBar';
+import CoinChart from '../../components/CoinChart/CoinChart';
 
 import CoinsContext from '../../contexts/CoinsContext';
 import fetchData from '../../utils/fetchData';
+
 import styles from './CoinPage.module.css';
-import CoinChart from '../../components/CoinChart/CoinChart';
 
 const CoinPage = () => {
   const context = useContext(CoinsContext);
@@ -31,14 +33,13 @@ const CoinPage = () => {
 
       setHistoryData(sortedHistory);
     })();
-  }, [historyData, timePeriod]);
+  }, [historyData, timePeriod, currency, uuid]);
 
   const currentCoin = coins.length
     ? coins.find((coin) => coin.uuid === uuid)
     : JSON.parse(localStorage.getItem('coin'));
 
-  const { symbol, name, iconUrl, marketCap, price, change, sparkline, rank } =
-    currentCoin;
+  const { name, iconUrl, marketCap, price, rank } = currentCoin;
 
   localStorage.setItem('coin', JSON.stringify(currentCoin));
   localStorage.setItem('timePeriod', timePeriod);

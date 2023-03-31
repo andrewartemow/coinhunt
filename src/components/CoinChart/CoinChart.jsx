@@ -54,8 +54,8 @@ const CoinChart = ({
       {
         label: `Price ( Past ${timePeriod} ) in ${currencySymbol}`,
         data: historyData.map((coin) => coin.price),
-        fill: false, // Don't fill area under the line
-        borderColor: 'gold', // Line color
+        fill: false,
+        borderColor: 'gold',
       },
     ],
   };
@@ -67,7 +67,6 @@ const CoinChart = ({
       },
       title: {
         display: true,
-        // text: 'Chart.js Line Chart',
       },
     },
 

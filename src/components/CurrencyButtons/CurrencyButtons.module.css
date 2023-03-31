@@ -1,0 +1,8 @@
+.currency {
+  display: flex;
+  align-items: center;
+}
+
+.currency button {
+  margin-left: 10px;
+}

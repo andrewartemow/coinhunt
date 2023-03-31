@@ -1,0 +1,48 @@
+.coinsListItem td {
+  border-bottom: 1px solid gray;
+  width: 25%;
+  padding: 20px;
+}
+
+.coinsListItem:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.names {
+  max-width: 50px;
+  text-align: left;
+}
+
+.imageWrapper {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+}
+
+.coinsListItemCoinWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.coinsListItemCoin {
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+
+.green {
+  color: hsl(142, 43%, 54%);
+}
+
+.red {
+  color: red;
+}

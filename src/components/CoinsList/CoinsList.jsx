@@ -1,12 +1,16 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import Input from '../ui/Input/Input';
+import CoinsListItem from '../CoinsListItem/CoinsListItem';
+
 import CoinsContext from '../../contexts/CoinsContext';
 import styles from './CoinsList.module.css';
 
 const CoinsList = () => {
-  const context = useContext(CoinsContext);
-  const { coins, currencySymbol } = context;
   const navigate = useNavigate();
+  const context = useContext(CoinsContext);
+  const { coins } = context;
 
   const [searchResults, setSearchResults] = useState([]);
 
@@ -30,7 +34,7 @@ const CoinsList = () => {
 
   return (
     <>
-      <input className={styles.input} type="text" onChange={handleChange} />
+      <Input type="text" onChange={handleChange} />
       <table className={styles.coinsList}>
         <thead className={styles.coinsDetails}>
           <tr>
@@ -42,46 +46,10 @@ const CoinsList = () => {
         </thead>
         <tbody>
           {searchResults.map((coin) => (
-            <tr
-              key={coin.uuid}
-              className={styles.coinsListItem}
-              onClick={() => handleCoinRowClick(coin)}
-            >
-              <td>
-                <div className={styles.coinsListItemCoinWrapper}>
-                  <div className={styles.coinsListItemCoin}>
-                    <div className={styles.imageWrapper}>
-                      <img src={coin.iconUrl} alt="here needs to be image" />
-                    </div>
-                    <div className={styles.names}>
-                      <h3>{coin.symbol}</h3>
-                      <p>{coin.name}</p>
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <p className={styles.price}>
-                  {currencySymbol} {Number(coin.price).toFixed(6)}
-                </p>
-              </td>
-              <td>
-                <p
-                  className={
-                    String(coin.change).includes('-')
-                      ? styles.red
-                      : styles.green
-                  }
-                >
-                  {coin.change}%
-                </p>
-              </td>
-              <td>
-                <p>
-                  {currencySymbol} {Number(coin.marketCap).toFixed(0)}
-                </p>
-              </td>
-            </tr>
+            <CoinsListItem
+              coin={coin}
+              handleCoinRowClick={handleCoinRowClick}
+            />
           ))}
         </tbody>
       </table>
