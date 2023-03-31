@@ -1,21 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import Slider from 'react-slick';
+import CoinsContext from '../../contexts/CoinsContext';
 
 import './CoinSlider.css';
 
 const CoinSlider = () => {
-  const [coins, setCoins] = useState([]);
-  useEffect(() => {
-    (async () => {
-      const res = await fetch(
-        'https://api.coinstats.app/public/v1/coins?skip=0&limit=50&currency=USD'
-      );
-      const data = await res.json();
-      console.log(data);
-      setCoins(data.coins);
-    })();
-  }, []);
-
+  const context = useContext(CoinsContext);
+  const { coins, currencySymbol } = context;
   const settings = {
     // dots: true,
     infinite: true,
@@ -57,13 +48,14 @@ const CoinSlider = () => {
       <Slider {...settings}>
         {!!coins.length &&
           coins.map((coin) => (
-            <div key={coin.id} className="coinSliderItem">
+            <div key={coin.uuid} className="coinSliderItem">
               <div className="coinImageWrapper">
-                <img src={coin.icon} alt=":(" />
+                <img src={coin.iconUrl} alt=":(" />
               </div>
               <h4>{coin.name}</h4>
               <p>
-                <span>price:</span> {coin.price.toFixed(4)} USD
+                <span>price:</span> {currencySymbol}{' '}
+                {Number(coin.price).toFixed(4)}
               </p>
             </div>
           ))}

@@ -2,6 +2,7 @@
   background-color: hsl(240, 5%, 8%);
   padding: 20px 0;
   position: fixed;
+  z-index: 100;
   width: 100%;
 }
 
@@ -11,8 +12,11 @@
   align-items: center;
 }
 
-.headerContent p {
-  border: 1px solid gray;
-  border-radius: 10px;
-  padding: 10px;
+.currency {
+  display: flex;
+  align-items: center;
+}
+
+.headerContent button {
+  margin-left: 10px;
 }

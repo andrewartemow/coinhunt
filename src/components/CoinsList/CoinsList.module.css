@@ -1,0 +1,91 @@
+.input {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.coinsList {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.coinsList td {
+  width: 25%;
+  padding: 20px;
+}
+
+.coinsList th {
+  padding: 10px;
+}
+
+.coinsDetails {
+  width: 100%;
+  background-color: hsla(230, 16%, 22%, 0.5);
+  color: #fff;
+  border-radius: 10px;
+}
+
+/* .coinsDetails {
+  padding: 20px;
+} */
+
+/* .coinsListItem {
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.coinsListItem:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.coinsListItem td {
+  border-bottom: 1px solid gray;
+}
+
+.names {
+  max-width: 50px;
+  text-align: left;
+}
+
+.imageWrapper {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+}
+
+.coinsListItemCoinWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.coinsListItemCoin {
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+
+.green {
+  color: hsl(142, 43%, 54%);
+}
+
+.red {
+  color: red;
+}

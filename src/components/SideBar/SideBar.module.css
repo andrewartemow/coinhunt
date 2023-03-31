@@ -1,0 +1,40 @@
+.sideBar {
+  width: 35%;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid gray;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.coinImageWrapper {
+  height: 90px;
+  width: 90px;
+  margin: 10px 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.coinImageWrapper img {
+  width: 100%;
+}
+
+.sideBar h2 {
+  margin-bottom: 10px;
+}
+
+/* .sideBar p {
+  text-align: left;
+  margin-bottom: 10px;
+} */
+
+.sideBar h3 {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.sideBar h3 span {
+  font-weight: normal;
+}
