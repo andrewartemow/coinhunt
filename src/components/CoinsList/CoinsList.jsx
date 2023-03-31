@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CoinsContext from '../../contexts/CoinsContext';
 import styles from './CoinsList.module.css';
@@ -7,13 +7,30 @@ const CoinsList = () => {
   const context = useContext(CoinsContext);
   const { coins, currencySymbol } = context;
   const navigate = useNavigate();
+
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    setSearchResults(coins);
+  }, [coins]);
+
   const handleCoinRowClick = (coin) => {
     navigate(`/${coin.uuid}`);
   };
 
+  const handleChange = (e) => {
+    if (!e.target.value) return setSearchResults(coins);
+
+    const resultsArray = coins.filter((coin) => {
+      return coin.name.toLowerCase().includes(e.target.value.toLowerCase());
+    });
+
+    setSearchResults(resultsArray);
+  };
+
   return (
     <>
-      <input className={styles.input} type="text" />
+      <input className={styles.input} type="text" onChange={handleChange} />
       <table className={styles.coinsList}>
         <thead className={styles.coinsDetails}>
           <tr>
@@ -24,7 +41,7 @@ const CoinsList = () => {
           </tr>
         </thead>
         <tbody>
-          {coins.map((coin) => (
+          {searchResults.map((coin) => (
             <tr
               key={coin.uuid}
               className={styles.coinsListItem}

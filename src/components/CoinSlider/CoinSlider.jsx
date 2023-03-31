@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import CoinsContext from '../../contexts/CoinsContext';
 
@@ -7,6 +8,11 @@ import './CoinSlider.css';
 const CoinSlider = () => {
   const context = useContext(CoinsContext);
   const { coins, currencySymbol } = context;
+  const navigate = useNavigate();
+  const handleCoinRowClick = (coin) => {
+    navigate(`/${coin.uuid}`);
+  };
+
   const settings = {
     // dots: true,
     infinite: true,
@@ -48,7 +54,11 @@ const CoinSlider = () => {
       <Slider {...settings}>
         {!!coins.length &&
           coins.map((coin) => (
-            <div key={coin.uuid} className="coinSliderItem">
+            <div
+              key={coin.uuid}
+              className="coinSliderItem"
+              onClick={() => handleCoinRowClick(coin)}
+            >
               <div className="coinImageWrapper">
                 <img src={coin.iconUrl} alt=":(" />
               </div>

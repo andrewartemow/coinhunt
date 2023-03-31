@@ -13,7 +13,7 @@ const SideBar = ({ currencySymbol, name, price, rank, imgSrc, marketCap }) => {
       <h3>
         CurrentPrice:{' '}
         <span>
-          {currencySymbol} {Number(price).toFixed(4)}
+          {currencySymbol} {Number(price).toFixed(5)}
         </span>
       </h3>
       <h3>
