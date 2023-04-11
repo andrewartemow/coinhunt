@@ -6,3 +6,6 @@ export const CURRENCY_UUID = {
   USD: 'yhjMzLPhuIDl',
   EUR: '5k-_VTxqtCEI',
 };
+
+export const windowWidth = window.innerWidth;
+export const isMobile = windowWidth <= 570;

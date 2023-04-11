@@ -2,6 +2,8 @@ import { useContext } from 'react';
 
 import CoinsContext from '../../contexts/CoinsContext';
 
+import { isMobile } from '../../data';
+
 import styles from './CoinsListItem.module.css';
 
 const CoinsListItem = ({ coin, handleCoinRowClick }) => {
@@ -41,11 +43,13 @@ const CoinsListItem = ({ coin, handleCoinRowClick }) => {
           {coin.change}%
         </p>
       </td>
-      <td>
-        <p>
-          {currencySymbol} {Number(coin.marketCap).toFixed(0)}
-        </p>
-      </td>
+      {!isMobile && (
+        <td>
+          <p>
+            {currencySymbol} {Number(coin.marketCap).toFixed(0)}
+          </p>
+        </td>
+      )}
     </tr>
   );
 };

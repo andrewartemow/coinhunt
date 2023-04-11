@@ -5,6 +5,8 @@ import Input from '../ui/Input/Input';
 import CoinsListItem from '../CoinsListItem/CoinsListItem';
 
 import CoinsContext from '../../contexts/CoinsContext';
+import { isMobile } from '../../data';
+
 import styles from './CoinsList.module.css';
 
 const CoinsList = () => {
@@ -41,12 +43,13 @@ const CoinsList = () => {
             <th>Coin</th>
             <th>Price</th>
             <th>24h Change</th>
-            <th>Market Cap</th>
+            {!isMobile && <th>Market Cap</th>}
           </tr>
         </thead>
         <tbody>
           {searchResults.map((coin) => (
             <CoinsListItem
+              key={coin.uuid}
               coin={coin}
               handleCoinRowClick={handleCoinRowClick}
             />
