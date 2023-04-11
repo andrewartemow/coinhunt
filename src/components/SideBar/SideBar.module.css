@@ -42,7 +42,7 @@
 @media (max-width: 780px) {
   .sideBar {
     width: 100%;
-    height: 100%;
+    height: 50%;
     margin-bottom: 20px;
   }
 }
