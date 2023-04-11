@@ -3,3 +3,10 @@
   width: 100%;
   padding-top: 90px;
 }
+
+@media (max-width: 780px) {
+  .coinPage {
+    display: flex;
+    flex-direction: column;
+  }
+}

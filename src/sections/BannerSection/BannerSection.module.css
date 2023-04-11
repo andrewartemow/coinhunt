@@ -38,3 +38,9 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@media (max-width: 730px) {
+  .infoImg {
+    display: none;
+  }
+}

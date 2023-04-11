@@ -46,3 +46,16 @@
 .red {
   color: red;
 }
+
+@media (max-width: 570px) {
+  .coinsListItem td {
+    border-bottom: 1px solid gray;
+    width: 25%;
+    padding: 10px;
+  }
+
+  .imageWrapper {
+    width: 35px;
+    height: 35px;
+  }
+}

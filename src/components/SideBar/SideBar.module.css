@@ -38,3 +38,11 @@
 .sideBar h3 span {
   font-weight: normal;
 }
+
+@media (max-width: 780px) {
+  .sideBar {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+}

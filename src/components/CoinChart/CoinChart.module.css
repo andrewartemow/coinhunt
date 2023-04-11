@@ -22,3 +22,11 @@
 .chartButtons button {
   margin: 10px;
 }
+
+@media (max-width: 780px) {
+  .chartWrapper {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+}
